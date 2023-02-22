@@ -1,7 +1,7 @@
 function createListItem({ type, value }) {
   const html = `
   <li class="cash-list__item">
-    <span>${type}</span>
+    <span>${translate[type]}</span>
     <span>${value}</span>    
   </li>
   `;
@@ -34,7 +34,7 @@ function displayList(items) {
 
 /* 
 1. Napisi funkciju fetchList koja se koristi za dohvacanje liste studenata sa endpointa /records
- i potom displaya tu funkciju koristeci displayList funkciju. Mozes koristiti axios za to.
+ i potom displaya te podatke koristeci displayList funkciju. Mozes koristiti axios za to.
  Kreiraj varijablu u koju ces spremati tu listu u funkciji fetchList, te pozovi tu funkciju
  pri inicijalizaciji.
 */
@@ -43,6 +43,24 @@ function displayList(items) {
  2. Modificiraj postojecu createListItem funkciju da umjesto UTILITIES, GROCERIES, REPAIRS ,MISCELLANEOUS
   ispisuje Rezije, Namirnice, Servis, Ostalo. 
 */
+
+const translate = {
+  UTILITIES: "Rezije",
+  GROCERIES: "Namirnice",
+  REPAIRS: "Servis",
+  MISCELLANEOUS: "Ostalo",
+};
+
+async function fetchList() {
+  const { data } = await axios.get("http://localhost:3000/records");
+
+  cashList = data;
+  displayList(data);
+}
+
+let cashList = [];
+
+fetchList();
 
 /* 
  3. Dodaj funkciju na botun koja ce pri prvom kliku na botun sortirati listu od najveceg prema najmanjem
