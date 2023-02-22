@@ -2,22 +2,22 @@
   "records": [
     {
       "id": 0,
-      "type": "REZIJE",
+      "type": "UTILITIES",
       "value": 500
     },
     {
       "id": 1,
-      "type": "NAMIRNICE",
+      "type": "GROCERIES",
       "value": 150
     },
     {
       "id": 2,
-      "type": "SERVIS",
+      "type": "REPAIRS",
       "value": 2000
     },
     {
       "id": 3,
-      "type": "OSTALO",
+      "type": "MISCELLANEOUS",
       "value": 50
     }
   ]
