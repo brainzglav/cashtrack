@@ -1,0 +1,71 @@
+@import "../../styles/variables.scss";
+
+.button {
+    color: $color-font-primary;
+    background-color: $color-success;
+    padding: 10px 20px;
+}
+
+.switch {
+    position: relative;
+    width: 54px;
+    height: 32px;
+    border-radius: 25px;
+    background-color: $color-danger;
+    transition: all 0.2s;
+
+    &--enabled {
+        background-color: $color-success;
+
+        &.switch::after {
+            left: unset;
+            right: 2px;
+        }
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        top: 2px;
+        left: 2px;
+        width: 28px;
+        height: 28px;
+        background-color: $color-bg-secondary;
+        border-radius: 100%;
+    }
+}
+
+.cash-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 400px;
+    height: 300px;
+    overflow-y: auto;
+
+    &__item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: white;
+        box-shadow: $box-shadow-primary;
+        border-radius: 5px;
+        cursor: pointer;
+
+        &--selected {
+            filter: brightness(80%);
+        }
+    }
+}
+
+.status-marker {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    border-radius: 100%;
+    background-color: $color-success;
+
+    &--danger {
+        background-color: $color-danger;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "records": [
+    {
+      "id": 0,
+      "type": "REZIJE",
+      "value": 500
+    },
+    {
+      "id": 1,
+      "type": "NAMIRNICE",
+      "value": 150
+    },
+    {
+      "id": 2,
+      "type": "SERVIS",
+      "value": 2000
+    },
+    {
+      "id": 3,
+      "type": "OSTALO",
+      "value": 50
+    }
+  ]
+}

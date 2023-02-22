@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../style.css" />
+    <link rel="stylesheet" href="./index.css" />
+    <title>Student List</title>
+    <script defer src="../../node_modules/axios/dist/axios.min.js"></script>
+    <script defer type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <header class="flex flex-center">
+      <h1>Cashtrack</h1>
+    </header>
+    <main>
+      <div class="flex flex-align-center m-b-20">
+        <input class="input m-r-10" type="text" placeholder="Name..." />
+        <button class="button m-r-10">Sort</button>
+      </div>
+      <ul id="cash-list" class="cash-list"></ul>
+    </main>
+  </body>
+</html>

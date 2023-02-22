@@ -1,0 +1,19 @@
+.input {
+    min-width: 200px;
+    padding: 10px 20px;
+    border-radius: $border-radius;
+    outline: none;
+    font-size: $font-size-md;
+    border: unset;
+    box-shadow: $box-shadow-primary-light;
+    transition: all $transition-default;
+
+    &:hover,
+    &:focus {
+        box-shadow: $box-shadow-primary;
+    }
+
+    &.invalid {
+        border: 1px solid $color-danger;
+    }
+}
