@@ -11,3 +11,11 @@ function getValues(form) {
      vrijednosti napravi post request na /records endpoint s tim podacima. Poslije uspjesnog requesta
      redirectaj usera nazad na pages/list stranicu. 
 */
+
+const cancelBtn = document.getElementById("cancel-btn");
+
+cancelBtn.addEventListener(
+  "click",
+  () =>
+    (window.location.href = `${window.location.origin}/pages/list/index.html`)
+);

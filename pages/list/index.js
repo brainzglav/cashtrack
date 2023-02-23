@@ -67,6 +67,17 @@ function sortHandler() {
   displayList(data);
 }
 
+function changeHandler(event) {
+  const filter = event.target.value.toLowerCase();
+  const data = cashList.filter(({ type }) => {
+    const value = translate[type].toLowerCase();
+
+    return value.includes(filter);
+  });
+
+  displayList(data);
+}
+
 const translate = {
   UTILITIES: "Rezije",
   GROCERIES: "Namirnice",
@@ -86,8 +97,16 @@ fetchList();
 */
 
 const sortBtn = document.getElementById("sort-btn");
+const addBtn = document.getElementById("add-btn");
+const searchInput = document.getElementById("search");
 
 sortBtn.addEventListener("click", sortHandler);
+addBtn.addEventListener(
+  "click",
+  () =>
+    (window.location.href = `${window.location.origin}/pages/edit/index.html`)
+);
+searchInput.addEventListener("keyup", changeHandler);
 
 /* 
  4. Dodaj funkciju na input koja ce pri change eventu filtrirati listu ovisno o unesenom tekstu. Dakle

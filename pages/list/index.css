@@ -1,9 +1,3 @@
-.button {
-  color: var(--color-font-primary);
-  background-color: var(--color-success);
-  padding: 10px 20px;
-}
-
 .switch {
   position: relative;
   width: 54px;
