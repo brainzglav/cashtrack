@@ -44,19 +44,35 @@ function displayList(items) {
   ispisuje Rezije, Namirnice, Servis, Ostalo. 
 */
 
-const translate = {
-  UTILITIES: "Rezije",
-  GROCERIES: "Namirnice",
-  REPAIRS: "Servis",
-  MISCELLANEOUS: "Ostalo",
-};
-
 async function fetchList() {
   const { data } = await axios.get("http://localhost:3000/records");
 
   cashList = data;
   displayList(data);
 }
+
+function sortHandler() {
+  if (sortBtn.innerHTML === "Descending") {
+    const data = cashList.sort((first, second) => first.value - second.value);
+
+    sortBtn.innerHTML = "Ascending";
+    displayList(data);
+
+    return;
+  }
+
+  const data = cashList.sort((first, second) => second.value - first.value);
+
+  sortBtn.innerHTML = "Descending";
+  displayList(data);
+}
+
+const translate = {
+  UTILITIES: "Rezije",
+  GROCERIES: "Namirnice",
+  REPAIRS: "Servis",
+  MISCELLANEOUS: "Ostalo",
+};
 
 let cashList = [];
 
@@ -68,6 +84,10 @@ fetchList();
   naziv botuna ce biti Ascending. Ponovnim klikom botun ce mjenjati svoje stanje iz Ascendinga u Descending
   i obrnuto.
 */
+
+const sortBtn = document.getElementById("sort-btn");
+
+sortBtn.addEventListener("click", sortHandler);
 
 /* 
  4. Dodaj funkciju na input koja ce pri change eventu filtrirati listu ovisno o unesenom tekstu. Dakle
