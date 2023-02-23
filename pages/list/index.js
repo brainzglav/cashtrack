@@ -73,3 +73,9 @@ fetchList();
  4. Dodaj funkciju na input koja ce pri change eventu filtrirati listu ovisno o unesenom tekstu. Dakle
   za unos rez, mora mi izlistati sve elemente s imenom rezije.
 */
+
+/* 
+ 5. Dodaj Add botun na vrhu liste gdje se nalazi filter. Add botun mora redirectat usera na pages/edit screen.
+    Zakaci odgovarajuci event listener na taj botun kako bi izvrsio redirect. U pages/edit/index.html dokumentu
+    dodaj Cancel botun koji ce usera vracati na pages/list/index.html. 
+*/

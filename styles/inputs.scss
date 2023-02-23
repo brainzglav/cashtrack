@@ -17,3 +17,20 @@
         border: 1px solid $color-danger;
     }
 }
+
+.select {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    min-width: 240px;
+    padding: 10px 20px;
+    color: $color-placeholder;
+    border-radius: $border-radius;
+    outline: none;
+    font-size: $font-size-md;
+    border: unset;
+    box-shadow: $box-shadow-primary-light;
+
+    &.invalid {
+        border: 1px solid $color-danger;
+    }
+}
