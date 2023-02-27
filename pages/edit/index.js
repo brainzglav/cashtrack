@@ -12,10 +12,27 @@ function getValues(form) {
      redirectaj usera nazad na pages/list stranicu. 
 */
 
-const cancelBtn = document.getElementById("cancel-btn");
+async function submitHandler(event) {
+  event.preventDefault();
 
-cancelBtn.addEventListener(
-  "click",
-  () =>
-    (window.location.href = `${window.location.origin}/pages/list/index.html`)
-);
+  const { value, type } = getValues(event.target);
+
+  if (!value || !type) {
+    alert("Molim unesi oba polja!");
+
+    return;
+  }
+
+  await axios.post("http://localhost:3000/records", { value, type });
+
+  window.location.href = `${window.location.origin}/pages/list/index.html`;
+}
+
+const cancelBtn = document.getElementById("cancel-btn");
+const addForm = document.getElementById("add-form");
+
+cancelBtn.addEventListener("click", () => {
+  window.location.href = `${window.location.origin}/pages/list/index.html`;
+});
+
+addForm.addEventListener("submit", submitHandler);

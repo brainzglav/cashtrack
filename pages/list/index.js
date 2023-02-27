@@ -101,11 +101,9 @@ const addBtn = document.getElementById("add-btn");
 const searchInput = document.getElementById("search");
 
 sortBtn.addEventListener("click", sortHandler);
-addBtn.addEventListener(
-  "click",
-  () =>
-    (window.location.href = `${window.location.origin}/pages/edit/index.html`)
-);
+addBtn.addEventListener("click", () => {
+  window.location.href = `${window.location.origin}/pages/edit/index.html`;
+});
 searchInput.addEventListener("keyup", changeHandler);
 
 /* 

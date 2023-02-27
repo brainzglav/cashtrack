@@ -19,6 +19,11 @@
       "id": 3,
       "type": "MISCELLANEOUS",
       "value": 50
+    },
+    {
+      "value": "1000",
+      "type": "UTILITIES",
+      "id": 4
     }
   ]
 }

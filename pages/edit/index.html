@@ -15,14 +15,27 @@
       <h1>Cashtrack</h1>
     </header>
     <main>
-      <!-- 6. Dodaj formu s jednim selectom i jednim inputom. Selectu sadrzi option elemente koji   -->
+      <!-- 6. Dodaj formu s jednim selectom i jednim inputom. Select sadrzi option elemente koji    -->
       <!--    imaju svoj value i odgovarajuci opis. Select mora imati 4 opcije (value/description): -->
       <!--    UTILITIES/Rezije, GROCERIES/Namirnice, REPAIRS/Servis, MISCELLANEOUS/Ostalo. Input    -->
       <!--    mora primati broj. Imena selecta i inputa neka budu ista kao i odgovarajuci fieldovi  -->
       <!--    u objektu iz db.json-a, dakle type i value. Za select mozes koristit select klasu, a  -->
       <!--    za input klasu input. Na dno dodaj Submit botun koji ce submitat tu formu.            -->
 
-      <button id="cancel-btn" class="button">Cancel</button>
+      <form id="add-form" class="form">
+        <select class="select" name="type">
+          <option default hidden value="">Select type</option>
+          <option value="UTILITIES">Rezije</option>
+          <option value="GROCERIES">Namirnice</option>
+          <option value="REPAIRS">Servis</option>
+          <option value="MISCELLANEOUS">Ostalo</option>
+        </select>
+        <input class="input" type="number" name="value" placeholder="Value" />
+        <div class="flex">
+          <button class="button m-r-10" type="submit">Submit</button>
+          <button id="cancel-btn" class="button" type="button">Cancel</button>
+        </div>
+      </form>
     </main>
   </body>
 </html>
